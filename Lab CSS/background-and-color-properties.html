@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-color {
+            width: 300px;
+            height: 150px;
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        .box-image {
+            width: 300px;
+            height: 300px;
+            background-image: url('../Pic/11.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid black;
+        }
+
+        .box-short {
+            width: 300px;
+            height: 300px;
+            background: url('../Pic/11.jpg') no-repeat center / cover;
+            border: 2px solid black;
+        }
+
+        .bg-yellow {
+            background-color: yellow;
+        }
+
+        .bg-hex {
+            background-color: #FF5733;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background and Color Properties Example</h1>
+    <div class="box-color">This div has a light blue background.</div>
+    <div class="box-image">This div has a background image.</div>
+    <div class="box-short">This div uses the shorthand background property.</div>
+    <div class="bg-yellow">This div has a yellow background.</div>
+    <div class="bg-hex">This div has a hex color background.</div>
+</body>
+</html>
