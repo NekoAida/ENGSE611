@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. Element Selector */
+        P {
+            color: green;
+        }
+
+        /* 2. Class Selector */
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+
+        /* 3. ID Selector */
+        #header {
+            background: blue;
+            color: white;
+            padding: 10px;
+        }
+
+        /* 1) Pseudo-class Selector */
+        p:hover {
+            color: red;
+            background-color: #ffe5e5;
+            cursor: pointer;
+        }
+
+        /* 2) Attribute Selecotr [type="text"] */
+        input[type="text"] {
+            border: 2px solid blue;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        input[type="text"]:focus {
+            border-color: rgb(255, 0, 255);
+            outline: none;
+            background-color: #fff0fa;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>ตัวอย่าง CSS Selectors</h1>
+
+    <!-- 1. Element Selector -->
+     <p>
+        ข้อความนี้ถูกจัดสีด้วย Element Selector (p { color: green; })
+     </p>
+
+     <!-- 2. Class Selector -->
+      <p class="highlight">
+        ข้อความนี้ถูกจัดสไตล์ด้วย Class Selector (.highlight)
+     </p>
+
+     <!-- 3. ID Selector -->
+     <div id="header">
+       นี่คือพิ้นที่ Header (ID Selector)
+     </div>
+    
+     <div id="header">
+       Sup
+     </div>
+    
+     <h2>Attribute Selector [type="text"]</h2>
+     <input type="text" placeholder="พิมพ์ข้อความที่นี่">
+</body>
+</html>
