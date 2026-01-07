@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+
+            /* แบบคอลัมน์ */
+            grid-template-columns: 20% 80%;
+
+            /* แบบแถว */
+            grid-template-rows: 70px 530px 70px;
+
+            gap: 10px;
+            padding: 10px;
+            background-color: #e0f7f7;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            grid-row: 1/2;
+            /* กำหนดให้ header เริ่มแถวที่ 1 และ สิ้นสุดที่แถว 2 */
+            grid-column: 1/3;
+            /* กำหนดให้ header เริ่มแถวคอลัมน์ที่ 1 และ สิ้นสุดที่แถว 3 */
+            background-color: rgb(52, 129, 0);
+            color: white;
+            text-align: center;
+            line-height: 70px;
+            font-size: 24px;
+        }
+
+        /* Sidebar */
+        aside {
+            grid-row: 2/3;
+            /* กำหนดให้ aside เริ่มแถวที่ 2 และ สิ้นสุดที่แถว 3 */
+            grid-column: 1/2;
+            /* กำหนดให้ aside เริ่มแถวคอลัมน์ที่ 1 และ สิ้นสุดที่แถว 2 */
+            background-color: rgb(0, 82, 129);
+            color: white;
+            text-align: center;
+            line-height: 530px;
+            font-size: 24px;
+        }
+
+        /* Main Content */
+        .content {
+            grid-row: 2/3;
+            /* กำหนดให้ content เริ่มแถวที่ 2 และ สิ้นสุดที่แถว 3 */
+            grid-column: 2/3;
+            /* กำหนดให้ content เริ่มแถวคอลัมน์ที่ 2 และ สิ้นสุดที่แถว 3 */
+            background-color: rgb(129, 0, 129);
+            color: white;
+            text-align: center;
+            line-height: 530px;
+            font-size: 24px;
+        }
+
+        /* Footer */
+        footer {
+            grid-row: 3/4;
+            /* กำหนดให้ footer เริ่มแถวที่ 3 และ สิ้นสุดที่แถว 4 */
+            grid-column: 1/3;
+            /* กำหนดให้ footer เริ่มแถวคอลัมน์ที่ 1 และ สิ้นสุดที่แถว 3 */
+            background-color: rgb(0, 129, 86);
+            color: white;
+            text-align: center;
+            line-height: 70px;
+            font-size: 24px;
+        }
+
+        /* =============================================== */
+        /* ถ้ากำหนดชื่อให้พื้นที่นั้นๆ จะเกิดอะไรนะ */
+        /* ใช้ grid-template-areas แทน grid-row / grid-column */
+
+        .grid-container-2 {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "aside main"
+                "footer footer";
+
+            /* ความสูงของ Grid Track Row ช่องที่ 1=70px และ ช่องที่ 2=530px และ ช่องที่ 3=70px */
+            grid-template-rows: 70px 530px 70px;
+
+            /* ความสูงของ Grid Track Column ช่องที่ 1=20% และ ช่องที่ 2=80% */
+            grid-template-columns: 20% 80%;
+
+            gap: 10px;
+            padding: 10px;
+            background-color: #e0f7f7;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .grid-container-2 header {
+            grid-area: header;
+            /* กำหนดให้ header อยู่ในพื้นที่ชื่อ header */
+            background-color: rgb(52, 129, 0);
+            color: white;
+            text-align: center;
+            line-height: 70px;
+            font-size: 24px;
+        }
+
+        .grid-container-2 aside {
+            grid-area: aside;
+            /* กำหนดให้ aside อยู่ในพื้นที่ชื่อ aside */
+            background-color: rgb(0, 82, 129);
+            color: white;
+            text-align: center;
+            line-height: 530px;
+            font-size: 24px;
+        }
+
+        .grid-container-2 .content {
+            grid-area: main;
+            /* กำหนดให้ content อยู่ในพื้นที่ชื่อ main */
+            background-color: rgb(129, 0, 129);
+            color: white;
+            text-align: center;
+            line-height: 530px;
+            font-size: 24px;
+        }
+
+        .grid-container-2 footer {
+            grid-area: footer;
+            /* กำหนดให้ footer อยู่ในพื้นที่ชื่อ footer */
+            background-color: rgb(0, 129, 86);
+            color: white;
+            text-align: center;
+            line-height: 70px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>แบบที่ 1: ใช้ grid-row / grid-column</h1>
+    <div class="grid-container">
+        <header>Header</header>
+        <aside>Sidebar</aside>
+        <div class="content">Main Content</div>
+        <footer>Footer</footer>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <h1>แบบที่ 2: ใช้ grid-template-areas</h1>
+    <div class="grid-container-2">
+        <header>Header</header>
+        <aside>Sidebar</aside>
+        <div class="content">Main Content</div>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>

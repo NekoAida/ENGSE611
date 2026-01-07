@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Examples</title>
+    <style>
+        /* กล่องแม่ */
+        .flex-box {
+            display: flex;
+            flex-direction: row;
+            /* row หรือ column */
+            gap: 10px;
+            background: #f0f0f0;
+            padding: 15px;
+            border: 2px solid #ccc;
+            height: 150px;
+        }
+
+        /* กล่องลูก */
+        .item {
+            background: navy;
+            color: white;
+            font-size: 20px;
+            width: 80px;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* ใช้ align-items: stretch */
+        .stretch .item {
+            background: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>1) justify-content: center</h2>
+    <div class="flex-box" style="justify-content: center;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <!-- ===================== -->
+    <h2>2) justify-content: space-between</h2>
+    <div class="flex-box" style="justify-content: space-between;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <!-- ===================== -->
+    <h2>3) align-items: center (จัดตรงกลางแนวตั้ง)</h2>
+    <div class="flex-box" style="align-items: center;">
+        <div class="item" style="height:40px;">1</div>
+        <div class="item" style="height:80px;">2</div>
+        <div class="item" style="height:60px;">3</div>
+    </div>
+
+    <!-- ===================== -->
+    <h2>4) align-items: stretch (ลูกถูกยืดให้เท่ากัน)</h2>
+    <div class="flex-box stretch" style="align-items: stretch;">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <hr>
+
+    <!-- Column Direction Examples -->
+    <h2>1) justify-content: center (จัดให้อยู่ตรงกลาง "แนวตั้ง")</h2>
+    <div class="flex-box" style="flex-direction: column; justify-content: center; height: 200px;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <!-- ===================== -->
+    <h2>2) justify-content: space-between (กระจายบน-ล่าง)</h2>
+    <div class="flex-box" style="flex-direction: column; justify-content: space-between; height: 200px;">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
+
+    <!-- ===================== -->
+    <h2>3) align-items: center (ลูกอยู่ตรงกลาง "แนวนอน")</h2>
+    <div class="flex-box" style="flex-direction: column; align-items: center; height: 200px;">
+        <div class="item" style="width:60px;">X</div>
+        <div class="item" style="width:80px;">Y</div>
+        <div class="item" style="width:40px;">Z</div>
+    </div>
+
+    <!-- ===================== -->
+    <h2>4) align-items: stretch (ลูกถูกยืดเท่ากับความกว้างแนวนอน)</h2>
+    <div class="flex-box stretch" style="flex-direction: column; align-items: stretch; height: 200px;">
+        <div class="item" style="width: auto;">One</div>
+        <div class="item" style="width: auto;">Two</div>
+        <div class="item" style="width: auto;">Three</div>
+    </div>
+
+</body>
+
+</html>

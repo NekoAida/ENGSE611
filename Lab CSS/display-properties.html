@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block-example div {
+            display: block;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #c8e6ff;
+        }
+
+        .inline-example span {
+            display: inline;
+            padding: 5px;
+            background-color: violet;
+            margin-right: 5px;
+        }
+
+        .inline-block-example div {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            background-color: #d2ffd2;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #4caf50;
+        }
+
+        .box {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #c8e6ff;
+            border: 2px solid #4caf50;
+            font-size: 20px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block-example">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="inline-example">
+        <span>inline 1</span>
+        <span>inline 2</span>
+        <span>inline 3</span>
+    </div>
+    <div class="inline-block-example">
+        <div>inline-block 1</div>
+        <div>inline-block 2</div>
+        <div>inline-block 3</div>
+    </div>
+    <h2>แสดงผล</h2>
+    <div class="box">box1 ปกติ</div>
+    <div class="box none">box2 none</div>
+    <div class="box">box3 hidden</div>
+    <div class="box hidden">box4 hidden</div>
+    <div class="box">box5</div>
+</body>
+
+</html>
