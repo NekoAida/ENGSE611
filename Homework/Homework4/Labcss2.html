@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การบ้าน (Lab CSS2)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin-bottom: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            min-height: calc(100vh - 80px);
+        }
+
+        .sidebar {
+            background-color: #2196F3;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .content {
+            background-color: #e0e0e0;
+            padding: 30px;
+        }
+
+        .content h2 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .content p {
+            line-height: 1.6;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>โจทย์ที่ 2: 2-Column Layout ด้วย CSS Grid</h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>เมนู</h2>
+            <ul>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>ยินดีต้อนรับ</h2>
+            <p>นี่คือเนื้อหาที่แสดงอยู่ในส่วนไซต์</p>
+            <p>คอนเทนต์คอนเทอร์จะขยายตามหน้าจอที่ใช้งาน Responsive Layout</p>
+        </div>
+    </div>
+</body>
+
+</html>
