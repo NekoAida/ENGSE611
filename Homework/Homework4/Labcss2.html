@@ -24,15 +24,18 @@
         }
 
         .container {
-            display: grid;
-            grid-template-columns: 25% 75%;
-            min-height: calc(100vh - 80px);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            min-height: calc(100vh - 64px);
         }
 
         .sidebar {
             background-color: #2196F3;
             color: white;
             padding: 30px 20px;
+            flex: 0 0 200px;
+            min-width: 200px;
         }
 
         .sidebar h2 {
@@ -52,6 +55,8 @@
         .content {
             background-color: #e0e0e0;
             padding: 30px;
+            flex: 1 1 400px;
+            min-width: 400px;
         }
 
         .content h2 {
@@ -63,12 +68,6 @@
             line-height: 1.6;
             font-size: 1em;
             margin-bottom: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
