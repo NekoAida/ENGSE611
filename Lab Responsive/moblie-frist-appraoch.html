@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-First Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    /* Base Mobile */
+    body {
+        margin: 0;
+        font-family: Tahoma, sans-serif;
+        background: #f5f5f5;
+    }
+
+    header {
+        background: #2c3e50;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        background: #34495e;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        text-align: center;
+        background: #dddddd;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) {
+
+        header {
+            text-align: left;
+            padding: 20px;
+        }
+
+        nav {
+            flex-direction: row;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 30px 40px;
+        }
+
+        main {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>
+
+<body>
+
+    <header>
+        <h1>Mobile-First Approach</h1>
+        <p>เริ่มออกแบบจากมือถือ แล้วค่อยขยายสู่จอใหญ่</p>
+
+        <nav>
+            <a href="#">หน้าแรก</a>
+            <a href="#">เกี่ยวกับ</a>
+            <a href="#">บทเรียน</a>
+            <a href="#">ติดต่อ</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h3>แนวคิด Mobile-First</h3>
+            <p>
+                เริ่มออกแบบและเขียนโค้ดสำหรับหน้าจอมือถือก่อน
+                จากนั้นจึงเพิ่มเงื่อนไขสำหรับหน้าจอที่ใหญ่ขึ้น
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>ข้อดี</h3>
+            <ul>
+                <li>เว็บไซต์โหลดเร็ว</li>
+                <li>เหมาะกับผู้ใช้มือถือ</li>
+                <li>โค้ดเป็นระเบียบ</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>การใช้งานจริง</h3>
+            <p>
+                ใช้ร่วมกับ Responsive Design
+                และเป็นมาตรฐานของการพัฒนาเว็บยุคปัจจุบัน
+            </p>
+        </div>
+    </main>
+
+    <img src="/Pic/Cat_August_2010-4.jpg" alt="Cat">
+
+    <footer>
+        รายวิชา ENGSE611 การพัฒนาเว็บด้วยเทคโนโลยีสมัยใหม่
+    </footer>
+
+</body>
+
+</html>
