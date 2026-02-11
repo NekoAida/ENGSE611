@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output">ผลลัพธ์จะปรากฏที่นี่…</div>
+    <button onclick="runDemo()">Run Code</button>
+
+    <script>
+        function runDemo() {
+        console.clear();
+        const output = [];
+
+        let number = [30, 27, 84, 36, 24, 2, 74, 37, 8, 50];
+        let min = number[0];
+        let max = number[0];
+        let sum = 0;
+
+        for (let i = 1; i <number.length; i++) {
+            if (number[i] < min) min = number[i];
+            if (number[i] > max) max = number[i];
+        }
+
+        for (let i = 0; i < number.length; i++) {
+            sum += number[i];
+        }
+
+        let avg = sum / number.length;
+
+        console.log("Numbers: " + number.join(" "));
+        console.log("Min: " + min);
+        console.log("Max: " + max);
+        console.log("Sum: " + sum);
+        console.log("Avg: " + avg);
+
+        document.getElementById("output").textContent = "Numbers: " + number.join(" ") + "\n" + "Min: " + min + "\n" + "Max: " + max + "\n" + "Sum: " + sum + "\n" + "Avg: " + avg;
+    }
+    </script>
+</body>
+</html>

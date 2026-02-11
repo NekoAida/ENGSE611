@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outputBox">ผลลัพธ์จะปรากฏที่นี่…</div>
+    <button onclick="runDemo()">Run Code</button>
+<script>
+    function runDemo() {
+        console.clear();
+        const output = [];
+    
+        let score = 72;
+
+        if (score >= 50) {
+            output.push("ผ่าน");
+            console.log("ผ่าน");
+        } else {
+            output.push("ไม่ผ่าน");
+            console.log("ไม่ผ่าน");
+        }
+
+        for (let i = 0; i < 5; i++) {
+            output.push("รอบ " + i);
+            console.log("รอบ " + i);
+        }
+
+        document.getElementById("outputBox").textContent = output.join("\n");
+    }
+</script>
+</body>
+</html>
