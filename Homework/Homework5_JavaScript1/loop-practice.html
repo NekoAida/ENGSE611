@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Practice</title>
+
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox, #outputBox {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #outputBox {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loop Practice</h1>
+    <div id="outputBox">ผลลัพธ์จะปรากฏที่นี่…</div>
+    <button onclick="runDemo()">Run Code</button>
+
+    <script>
+        function runDemo() {
+            console.clear();
+            const output = [];
+            
+            // สร้างตัวแปร maxNumber
+            let maxNumber = 15;
+            
+            // 3. เขียน for loop ให้แสดงตัวเลข 0 ถึง maxNumber
+            output.push("=== วนลูปจาก 0 ถึง " + maxNumber + " ===");
+            console.log("=== วนลูปจาก 0 ถึง " + maxNumber + " ===");
+            
+            for (let i = 0; i <= maxNumber; i++) {
+                // ตรวจสอบว่าเป็นเลขคู่หรือคี่
+                if (i % 2 === 0) {
+                    output.push(i + " (คู่)");
+                    console.log(i + " (คู่)");
+                } else {
+                    output.push(i + " (คี่)");
+                    console.log(i + " (คี่)");
+                }
+            }
+            
+            // 5. ทำการเพิ่มการนับแบบขั้น - นับทีละ 2 (0, 2, 4, 6, ...)
+            output.push("\n=== นับทีละ 2 ===");
+            console.log("\n=== นับทีละ 2 ===");
+            
+            for (let i = 0; i <= maxNumber; i += 2) {
+                output.push("นับทีละ 2: " + i);
+                console.log("นับทีละ 2: " + i);
+            }
+            
+            // 5. นับถอยหลังจาก 10 → 0
+            output.push("\n=== นับถอยหลังจาก 10 ถึง 0 ===");
+            console.log("\n=== นับถอยหลังจาก 10 ถึง 0 ===");
+            
+            for (let i = 10; i >= 0; i--) {
+                output.push("ถอยหลัง: " + i);
+                console.log("ถอยหลัง: " + i);
+            }
+            
+            // 4. แสดงผลทั้งในหน้าเว็บและใน Console
+            document.getElementById("outputBox").textContent = output.join("\n");
+        }
+    </script>
+    
+</body>
+</html>

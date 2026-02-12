@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Switch</title>
+
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox, #outputBox {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #outputBox {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grade Switch</h1>
+
+    <div id="outputBox">ผลลัพธ์จะปรากฏที่นี่…</div>
+
+    <button onclick="runDemo()">Run Code</button>
+    <script>
+        function runDemo() {
+            console.clear();
+            const output = [];
+            
+            // สุ่มคะแนน 0-100
+            let score = Math.floor(Math.random() * 100) + 1;
+            let grade = "";
+
+            output.push("คะแนนที่สุ่มได้: " + score);
+            console.log("คะแนนที่สุ่มได้: " + score);
+
+            // ตรวจสอบเกรด 
+            if (score >= 80) {
+                grade = "A";
+                output.push("เกรด: " + grade);
+                console.log("เกรด: " + grade);
+            } else if (score >= 70) {
+                grade = "B";
+                output.push("เกรด: " + grade);
+                console.log("เกรด: " + grade);
+            } else if (score >= 60) {
+                grade = "C";
+                output.push("เกรด: " + grade);
+                console.log("เกรด: " + grade);
+            } else if (score >= 50) {
+                grade = "D";
+                output.push("เกรด: " + grade);
+                console.log("เกรด: " + grade);
+            } else {
+                grade = "F";
+                output.push("เกรด: " + grade);
+                console.log("เกรด: " + grade);
+            }
+
+            // ตรวจสอบสถานะ
+            if (grade == "F") {
+                output.push("สถานะ: ไม่ผ่าน");
+                console.log("สถานะ: ไม่ผ่าน");
+            } else {
+                output.push("สถานะ: ผ่าน");
+                console.log("สถานะ: ผ่าน");
+            }
+
+            switch (grade) {
+                case "A": grade = "ยอดเยี่ยมมาก!a"; 
+                output.push("คำอธิบาย: " + grade); 
+                console.log("คำอธิบาย: " + grade); break;
+                case "B": grade = "ดีมาก รักษามาตรฐานไว้"; 
+                output.push("คำอธิบาย: " + grade); 
+                console.log("คำอธิบาย: " + grade); break;
+                case "C": grade = "ผ่านเกณฑ์ระดับดี"; 
+                output.push("คำอธิบาย: " + grade); 
+                console.log("คำอธิบาย: " + grade); break;
+                case "D": grade = "พอใช้ แต่ควรพัฒนาเพิ่ม"; 
+                output.push("คำอธิบาย: " + grade); 
+                console.log("คำอธิบาย: " + grade); break;
+                case "F": grade = "ต้องลงทะเบียนเรียนใหม่"; 
+                output.push("คำอธิบาย: " + grade); 
+                console.log("คำอธิบาย: " + grade); break;
+            }
+
+            // แสดงผลหน้าเว็บ
+            document.getElementById("outputBox").textContent = output.join("\n");
+        }
+    </script>
+    
+</body>
+</html>
