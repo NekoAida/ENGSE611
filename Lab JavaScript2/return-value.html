@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #codeBox, #outputBox {
+            padding: 15px;
+            border-radius: 10px;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        #outputBox {
+            background: #111;
+            border-left: 4px solid #00d26a;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="outputBox">ผลลัพธ์จะปรากฏที่นี่…</div>
+
+    <button onclick="runDemo()">Run Code</button>
+
+    <script>
+        function runDemo() {
+            const output = [];
+
+            // 1) ฟังก์ชันแบบปกติ
+            function sayHi() {
+                output.push("Hi");
+                console.log("Hi");
+            }
+            sayHi();
+            // 2) ฟังก์ชันแบบ Arrow
+            const sayHiArrow = () => {
+                output.push("Hi from Arrow");
+                console.log("Hi from Arrow");
+            };
+            sayHiArrow();
+            // 3) ฟังก์ชันแบบส่งค่าเข้า
+            function greet(name) {
+                output.push("Hello " + name);
+                console.log("Hello " + name);
+            }
+            greet("Alex");
+            // 4) ฟังก์ชันแบบ Return
+            function add(a, b) {
+                return a + b;
+            }
+            let sum = add(5, 7);
+            output.push("ผลรวม 5 + 7 = " + sum);
+            console.log("ผลรวม:", sum);
+
+            document.getElementById("outputBox").textContent = output.join("\n");
+        }
+    </script>
+</body>
+</html>
