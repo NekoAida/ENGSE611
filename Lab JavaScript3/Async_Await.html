@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async/Await Demo</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 6px;
+            background: #00bfff;
+            border: none;
+            color: white;
+            margin-right: 8px;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background: #0095d6;
+        }
+
+        ul {
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>เปรียบเทียบ Promise กับ Async/Await</h1>
+    <button onclick="loadUsersPromise()">โหลดแบบ Promise</button>
+    <button onclick="loadUsersAsync()">โหลดแบบ Async/Await</button>
+    <ul id="userList"></ul>
+
+    <script>
+        // API สำหรับทดลอง
+        const API_URL = "https://jsonplaceholder.typicode.com/users";
+
+        // Promise (.then)
+        function loadUsersPromise() {
+            const list = document.getElementById("userList");
+            // เรียก API
+            fetch(API_URL) // fetch ส่ง request ไปยัง API และคืนค่าเป็น Promise
+
+                // แปลง JSON เป็น Object
+                .then(res => res.json()) // .then ตัวที่ 1 จะทำงานเมื่อ Promise สำเร็จ
+                // แสดงข้อมูลบนหน้าเว็บ
+                .then(users => {   // .then ตัวที่ 2 จะทำงานเมื่อ JSON แปลงสำเร็จ
+                    list.innerHTML = "";
+                    users.forEach(user => {
+                        const li = document.createElement("li");
+                        li.textContent = user.name;
+                        list.appendChild(li);
+                    });
+                });
+        }
+
+        // async / await
+        async function loadUsersAsync() {
+            const list = document.getElementById("userList");
+            // เรียก API
+            const res = await fetch(API_URL);
+            // แปลง JSON เป็น Object
+            const users = await res.json(); // await รอผลลัพธ์จาก Promise แบบ non-blocking
+            list.innerHTML = "";
+            users.forEach(user => {
+                const li = document.createElement("li");
+                li.textContent = user.name;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

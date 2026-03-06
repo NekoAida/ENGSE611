@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events</title>
+    <style>
+        body {
+            font-family: "Prompt", sans-serif;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #0a3c8f;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 400px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 15px;
+            font-family: "Prompt", sans-serif;
+            border: 1.5px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Events – การทำงานกับฟอร์ม</h1>
+    <p>ลองคลิกเข้าและออกจากช่อง Input เพื่อดูผลลัพธ์:</p>
+
+    <div class="container">
+        <input type="text" id="username" placeholder="Username (ต้องมี 3+ ตัวอักษร)">
+    </div>
+
+    <script>
+        let username = document.getElementById('username');
+
+        // เมื่อ focus ที่ input
+        username.addEventListener('focus', function() {
+            this.style.backgroundColor = '#e3f2fd';
+        });
+
+        // เมื่อออกจากช่อง (blur)
+        username.addEventListener('blur', function() {
+            this.style.backgroundColor = '';
+
+            // Validation
+            if (this.value.length < 3) {
+                this.style.borderColor = 'red';
+            } else {
+                this.style.borderColor = 'green';
+            }
+        });
+    </script>
+</body>
+</html>
